@@ -36,9 +36,6 @@ sections.forEach((listItem)=>{ // looping through sections
     navList.push(item);
 });
 
-
-
-
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -66,8 +63,8 @@ function checkRect(el){
     let check = rect.top >= -10 &&
     rect.top < ((window.innerHeight * 0.8) || (document.documentElement.clientHeight  * 0.8)) // boolean var to check for rectList top comparing to viewport height (cross browser)
     return check; // returning check boolean
-
 }
+
 // seperate function to run on both document ready and scroll event
 function markActive(){
     sections.forEach((section)=>{
@@ -84,8 +81,6 @@ function markActive(){
         }
     });
 }
-
-
 
 // Scroll to anchor ID using scrollTO event
 function scrollToSection(el){

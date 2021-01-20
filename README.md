@@ -1,13 +1,24 @@
 # Landing Page Project
 
-## Table of Contents
+## fwd first project
 
-* [Instructions](#instructions)
+* [applied on](#Application)
+* [Tasks](#Tasks)
 
-## Instructions
+## Application
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+**Lesson 1: Javascript & the DOM**
+- Syntax.
+- The DOM.
+- Creating Content with JS.
+- Working with events.
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Tasks
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+1. Maintained Architecture Criteria.
+2. Navigation is built dynamically as an unordered list.
+3. Checking which section is being viewed while scrolling through the page.
+4. When clicking an item from the navigation menu, the link scrolls to the appropriate section.
+5. Maintained Code Quality and added comments when needed.
+
+
