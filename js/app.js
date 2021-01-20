@@ -78,9 +78,9 @@ function markActive(){
             sectionLink.style.backgroundColor = "#000d3c";
             sectionLink.style.color = "#fff";
         }else{
+            // putting everything to normal when off viewport
             section.classList.remove('current');
-            sectionLink.style.backgroundColor = "";
-            sectionLink.style.color = "black";
+            sectionLink.setAttribute('style',"");
         }
     });
 }
