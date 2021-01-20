@@ -108,4 +108,3 @@ document.addEventListener('scroll', function(){
     // mark the current section when page scrolls
     markActive();
 });
-
