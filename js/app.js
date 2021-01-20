@@ -18,7 +18,6 @@
  *
 */
 
-
 const headerNav = document.querySelector('#navbar__list'); // Navigation container ul
 const navList = []; // empty array for list of nav items
 const sections = document.querySelectorAll('[data-nav]') // NodeList of sections that will be linked to in the nav
@@ -62,6 +61,30 @@ for (const navItem of navList) { // looping through nav items array
 
 
 // Add class 'active' to section when near top of viewport
+function checkRect(el){
+    const rect = el.getBoundingClientRect(); // getting boundaries of target elm
+    let check = rect.top >= -10 &&
+    rect.top < ((window.innerHeight * 0.8) || (document.documentElement.clientHeight  * 0.8)) // boolean var to check for rectList top comparing to viewport height (cross browser)
+    return check; // returning check boolean
+
+}
+// seperate function to run on both document ready and scroll event
+function markActive(){
+    sections.forEach((section)=>{
+        let isVisible = checkRect(section); // using rectangle checker function
+        let sectionLink = document.querySelector(`a[href*="#${section.id}"]`); // storing the corresponding anchor in variable to reduce code later
+        if(isVisible){ // rect checker in action, yay!
+            section.classList.add('current');
+            sectionLink.style.backgroundColor = "#000d3c";
+            sectionLink.style.color = "#fff";
+        }else{
+            section.classList.remove('current');
+            sectionLink.style.backgroundColor = "";
+            sectionLink.style.color = "black";
+        }
+    });
+}
+
 
 
 // Scroll to anchor ID using scrollTO event
@@ -85,5 +108,9 @@ headerNav.addEventListener('click', function(e){ // listening to clicks on the n
     scrollToSection(e.target.getAttribute('href')); // taking the link's href using event target and passing the value to the smooth scrollto function
 })
 // Set sections as active
-
+markActive(); // mark the current section when page loads
+document.addEventListener('scroll', function(){
+    // mark the current section when page scrolls
+    markActive();
+});
 
